@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('images/Cloud.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    font-size: 1.3rem;
+}
+
+.app-main{
+    width: 50vh;
+    margin: 100px auto;
+    background-color: rgba(97, 117, 88, 0.712);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+}
+.app-main >*{
+    margin-bottom: 20px;
+}
+
+.input-box{
+    width: 100%;
+    background-color: rgba(236, 241, 236, 0.8);
+    border: none;
+    outline: none;
+    color: #582233;
+    font-size: 1.2rem;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center;
+}
+.input-box:focus{
+    background-color: rgb(235, 235, 235);
+}
+.weather-body{
+    color:#393232;
+    padding: 20px;
+    line-height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 50vh;
+}
+
+.location-details{
+    font-weight: bold;
+}
+
+.weather-status{
+    padding: 20px;
+}
+.temp{
+    font-size: 50pt;
+    font-weight: 700;
+    margin: 30px 0px;
+    text-shadow: 2px 3px rgba(0,0,0,0.3);
+}
+.min-max,.weather{
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
