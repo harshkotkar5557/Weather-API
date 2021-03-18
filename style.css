@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('images/Cloud.jpg');
+    background-image: url('images/paln.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -42,6 +42,7 @@ body{
     background-color: rgb(235, 235, 235);
 }
 .weather-body{
+    display: none;
     color:#393232;
     padding: 20px;
     line-height: 2rem;
@@ -66,6 +67,9 @@ body{
 .min-max,.weather{
     font-size: 12pt;
     font-weight: 600;
+}
+.date{
+    margin-top: 1rem;
 }
 
 

@@ -9,12 +9,14 @@ serachInputBox.addEventListener('keypress', (event)=>{
     if(event.keyCode == 13){
         console.log(serachInputBox.value)
         getWeatherReport(serachInputBox.value)
+        document.querySelector('.weather-body').style.display='block'
     }
 })
 
 function getWeatherReport(city){
     fetch(`${weatherApi.base}?q=${city}&appid=${weatherApi.key}`)
     .then(weather => {
+        console.log(weather);
         return weather.json();
     }).then(showWeatherReport)
 }
@@ -29,24 +31,41 @@ function showWeatherReport(weather){
     let minmax = document.getElementById('min-max')
     minmax.innerHTML= `${weather.main.temp_min}&deg;C (min) / ${weather.main.temp_max}&deg;C (max)`
 
-    let date = document.getElementById('date')
-    let todayDate = new Date();
-    console.log(todayDate);
-    date.innerText = dateManage(todayDate);
-
+    let weatherType = document.getElementById('weather')
+    weatherType.innerHTML = `${weather.weather[0].main}`
+    console.log(weatherType.textContent);
+    
+    if(weatherType.textContent == 'Clouds'){
+        document.body.style.backgroundImage = "url('images/Cloud.jpg')"
+    } else if (weatherType.textContent == 'Sunny'){
+        document.body.style.backgroundImage = "url('images/Sunny.jpg')"
+    }else if (weatherType.textContent == 'Rain'){
+        document.body.style.backgroundImage = "url('images/Rain.jpg')"
+    } else if (weatherType.textContent == 'Smoke'){
+        document.body.style.backgroundImage = "url('images/Sunny.jpg')"
+    }else if (weatherType.textContent == 'Clear'){
+        document.body.style.backgroundImage = "url('images/Sunny.jpg')"
+    }
+    document.querySelector('.date').innerHTML = dateManage(skim)
 }
 
+let skim = new Date()
 
 function dateManage(dateArg){
 
     let months =['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     let year = dateArg.getFullYear()
+    
     let day = days[dateArg.getDay()]
-    let month = months[dateArg.getFullYear()]
+    let month = months[dateArg.getMonth()]
     let date = dateArg.getDate()
-
-    return `${date} ${month} (${day}), ${year}`;
+    const modifyDate = `${date} ${month} (${day}), ${year}`;
+    console.log( modifyDate);
+    return  modifyDate
 }
+
+
+
