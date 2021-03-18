@@ -26,10 +26,10 @@ function showWeatherReport(weather){
     city.innerHTML= `${weather.name},${weather.sys.country}`
 
     let temperature = document.getElementById('temp')
-    temperature.innerHTML=`${Math.round(weather.main.temp)}&deg;C`
+    temperature.innerHTML=`${Math.round(weather.main.temp-273)}&deg;C`
 
     let minmax = document.getElementById('min-max')
-    minmax.innerHTML= `${weather.main.temp_min}&deg;C (min) / ${weather.main.temp_max}&deg;C (max)`
+    minmax.innerHTML= `${weather.main.temp_min-273}&deg;C (min) / ${weather.main.temp_max-273}&deg;C (max)`
 
     let weatherType = document.getElementById('weather')
     weatherType.innerHTML = `${weather.weather[0].main}`
